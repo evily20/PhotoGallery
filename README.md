@@ -8,7 +8,7 @@ Python with flask, pymongo, datetime and requests.
 PhotoGallery works using Python with framework Flask in the backend. The database used is MongoDb and in frontend HTML, CSS, Bootstrap is used.
 
 # How to use the Application
-The application can be started by executing "in.py" and browser address "http://127.0.0.1:5156/" which can be varied depending upon the port you choose. Replace '5156' with the port number to be used and in "in.py" change port to new port number.
+The application can be started by executing "in1.py" and browser address "http://127.0.0.1:5156/" which can be varied depending upon the port you choose. Replace '5156' with the port number to be used and in "in.py" change port to new port number.
 The application starts with '/' extension and it is the home page where the user can either login or sign up. 
 If any user tries to login with invalid/incorrect Userid(Email) or Password, the user remains in the same page.
 It is required that during sign up already existing Email should not be used.
