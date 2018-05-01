@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Album</title>
+ 
+    
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  </head>
+ 
+  <body>
+ 
+   
+ 
+      <div class="jumbotron" >
+        <h1 align="center">Photo Gallery</h1>
+        <form class="form-signin" action="/Album" method="POST" align="center">
+        <label for="Cover" class="sr-only">Cover</label>
+        <input type="name" name="Cover" id="Cover" class="form-control" placeholder="Cover Picture" required autofocus>
+       
+       <label for="Name" class="sr-only">Name</label>
+        <input type="name" name="Name" id="Name" class="form-control" placeholder="Album's Name" required autofocus> 
+       
+       <label for="Security" class="sr-only">Security</label>
+        <input type="name" name="Security" id="Security" class="form-control" placeholder="Public/Private/Only Me" required autofocus>
+        <label for="Description" class="sr-only">Description</label>
+        <input type="name" name="Description" id="Description" class="form-control" placeholder="Description" required autofocus>
+        <label for="Location" class="sr-only">Location</label>
+        <input type="name" name="Location" id="Location" class="form-control" placeholder="Remember where this Picture was clicked?" required autofocus>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit" type="submit">Add Abum</button>
+      </form>
+      </div>
+ 
+       
+ 
+  </body>
+</html>

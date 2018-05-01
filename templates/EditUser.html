@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+ 
+    
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    
+  </head>
+ 
+  <body>
+ 
+   
+ 
+      <div class="jumbotron">
+        <h1>Photo Gallery</h1>
+        <form class="form-signin" action="/User" method="POST">
+        <label for="inputFName" class="sr-only">First Name</label>
+        <input type="name" name="inputFName" id="inputFName" class="form-control" placeholder="FirstName" required autofocus value={{user["FirstName"]}}>
+       
+       <label for="inputLName" class="sr-only">Last Name</label>
+        <input type="name" name="inputLName" id="inputLName" class="form-control" placeholder="Last Name" required autofocus value={{user["LastName"]}}> 
+       
+       <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value={{user["Email"]}}>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="name" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required value={{user["Password"]}}>
+        
+        <label for="inputGender" class="sr-only">Gender</label>
+        <input type="text" name="inputGender" id="inputGender" class="form-control" placeholder="Gender" required value={{user["Gender"]}}>
+        <label for="inputProfilePicture" class="sr-only">Profile Picture</label>
+        <input type="text" name="inputProfilePicture" id="inputProfilePicture" class="form-control" placeholder="ProfilePicture" required value={{user["ProfilePicture"]}}>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit" type="submit">Save Changes</button>
+      </form>
+      </div>
+ 
+       
+ 
+  </body>
+</html>

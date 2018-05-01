@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>{{Album["Name"]}}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="jumbotron">
+
+<h1 align="center">The Photo Gallery</h1>
+
+</div>
+
+<div align="center">
+{% if( t=="2" ) -%}
+<p><a class="btn btn-primary btn-lg" href="/AddPicture" role="button" >Add Picture</a>
+            </p>
+<p><a class="btn btn-primary btn-lg" href="/RemovePicture" role="button" >Remove Picture</a>
+            </p>
+ {%- endif %}   
+</div>
+
+
+
+{% for picture in Album %}
+{% if ((picture["Security"]=="Only Me") and (t=="2")) -%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"> <h3 align="center">Picture Name: {{picture["Name"]}}</h3></div>
+      <div class="panel-body"><h4 align="center">Description: {{picture["Description"]}}</h4>
+   <h4 align="center">Location: {{picture["Location"]}}</h4>
+   <h4 align="center">Date: {{picture["Date"]}}</h4>
+   <img src={{picture["Link"]}}  height="200" width="160" align="middle" >
+</div>
+    </div>
+  
+  </div>
+
+{%- endif %}
+
+{% if ((picture["Security"]=="Private") and (t=="2" or t=="1"))-%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"> <h3 align="center">Picture Name: {{picture["Name"]}}</h3></div>
+      <div class="panel-body"><h4 align="center">Description: {{picture["Description"]}}</h4>
+   <h4 align="center">Location: {{picture["Location"]}}</h4>
+   <h4 align="center">Date: {{picture["Date"]}}</h4>
+   <img src={{picture["Link"]}}  height="200" width="160" align="middle" >
+</div>
+    </div>
+  
+  </div>
+{%- endif %}
+
+{% if (picture["Security"]=="Public" )-%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"> <h3 align="center">Picture Name: {{picture["Name"]}}</h3></div>
+      <div class="panel-body"><h4 align="center">Description: {{picture["Description"]}}</h4>
+   <h4 align="center">Location: {{picture["Location"]}}</h4>
+   <h4 align="center">Date: {{picture["Date"]}}</h4>
+   <img src={{picture["Link"]}}  height="200" width="160" align="middle" >
+</div>
+    </div>
+  
+  </div>
+{%- endif %}
+
+
+{% endfor %}
+
+
+
+
+
+
+</body>
+</html>

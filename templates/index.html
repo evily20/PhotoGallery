@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Photo Gallery</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<style>
+body { 
+    background-image: url("/static/back.jpeg");
+    background-attachment: fixed;
+    background-position: center; 
+}
+</style>
+<body >
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<div>  
+<form class="form-inline" action="/login" method="POST">
+    <input class="form-control mr-sm-2" type="text" id="userid" placeholder="User id" name="userid" >
+    <input class="form-control mr-sm-2" type="password" id="password" placeholder="Password" name="password" >
+    <button class="btn btn-success" id="submit" type="submit">Login</button
+   
+</form>
+</div>  
+
+</nav>
+<div class="jumbotron">
+<h1 align="center">The Photo Gallery</h1>
+<p><a class="btn btn-lg btn-success" href="showSignUp" role="button" >Sign up today</a>
+            </p>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>{{User["FirstName"]}}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="jumbotron">
+	{% if t=="2" -%}
+	<a align="right" href="/logout" >
+<button type="button" class="btn btn-danger" align="right">Log Out</button></a>
+{%- endif %}
+<h1 align="center">The Photo Gallery</h1>
+
+</div>
+<div>
+
+<h3 align="center">{{User["FirstName"]}}</h3>
+</div>
+<div align="center">
+<img src={{User["ProfilePicture"]}} alt={{User["FirstName"]}} height="300" width="260" align="middle">
+</div>
+{% if t=="2" -%}
+<div align="center">
+<p><a class="btn btn-primary btn-lg" href="AddAlbum" role="button" >Add Album</a>
+            </p>
+<p><a class="btn btn-primary btn-lg" href="/RemoveAlbum" role="button" >Remove Album</a>
+            </p>
+<p><a class="btn btn-primary btn-lg" href="/EditProfile" role="button" >Edit Profile</a>
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/RemoveUser" role="button" >Remove User</a>
+            </p>
+</div>
+
+{%- endif %}
+
+
+{% for al in User["Album"] %}
+{{al["Security"]}}
+{% if ((al["Security"]=="Only Me") and (t=="2")) -%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"><h4>Album Name: {{al["Name"]}}</h4></div>
+      <div class="panel-body"><h5>Date: {{al["Date"]}}</h5><br><h5>Location: {{al["geolocation"]}}</h5><br><h5>Description: {{al["Description"]}}</h5></div>
+<a href="/Album/{{User["Email"]}}/{{al["Name"]}}">
+   <img src={{al["Cover"]}}  height="200" width="160" align="middle" ></a>
+    </div>
+
+{%- endif %}
+
+{% if ((al["Security"]=="Private") and (t=="2" or t=="1"))-%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"><h4>Album Name: {{al["Name"]}}</h4></div>
+      <div class="panel-body"><h5>Date: {{al["Date"]}}</h5><br><h5>Location: {{al["geolocation"]}}</h5><br><h5>Description: {{al["Description"]}}</h5></div>
+<a href="/Album/{{User["Email"]}}/{{al["Name"]}}">
+   <img src={{al["Cover"]}}  height="200" width="160" align="middle" ></a>
+    </div>
+{%- endif %}
+
+{% if (al["Security"]=="Public" )-%}
+<div align="center">
+	<div class="panel panel-primary">
+      <div class="panel-heading"><h4>Album Name: {{al["Name"]}}</h4></div>
+      <div class="panel-body"><h5>Date: {{al["Date"]}}</h5><br><h5>Location: {{al["geolocation"]}}</h5><br><h5>Description: {{al["Description"]}}</h5></div>
+<a href="/Album/{{User["Email"]}}/{{al["Name"]}}">
+   <img src={{al["Cover"]}}  height="200" width="160" align="middle" ></a>
+    </div>
+{%- endif %}
+
+
+{% endfor %}
+
+
+
+</body>
+</html>
